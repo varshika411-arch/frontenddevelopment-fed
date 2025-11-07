@@ -15,7 +15,13 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Initialize database
-initializeDatabase();
+try {
+    initializeDatabase();
+    console.log('Database initialized successfully');
+} catch (error) {
+    console.error('Database initialization error:', error);
+    // Continue running the server even if database initialization fails
+}
 
 // Handle production
 if (process.env.NODE_ENV === 'production') {
