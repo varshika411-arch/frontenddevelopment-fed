@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/backend/server.js",
     "dev": "nodemon src/backend/server.js",
-    "build": "echo 'No build step required'",
+    "build": "npm install",
+    "postbuild": "echo 'Build completed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
