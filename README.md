@@ -187,6 +187,17 @@ src/
 - Protected routes using middleware
 - Role-based access control
 
+## Admin account (initial setup)
+
+If you need an administrator account on a fresh deploy, you can provide two environment variables so the server will create a seeded admin user on startup:
+
+```
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=StrongSecurePassword123
+```
+
+Set these in your Render (or hosting) environment variables before the first deployment. The server will create the admin user with the `admin` role during database initialization. After the admin account is created you can remove these environment variables if you prefer.
+
 ## Contributing
 
 1. Fork the repository
