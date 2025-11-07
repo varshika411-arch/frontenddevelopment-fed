@@ -160,3 +160,24 @@ function formatDate(date) {
         day: 'numeric'
     });
 }
+
+// Small UI helper: Bootstrap toast (creates a temporary alert)
+function showToast(message, type = 'info', timeout = 4000) {
+    const wrapper = document.createElement('div');
+    wrapper.className = `position-fixed bottom-0 end-0 p-3`;
+    wrapper.style.zIndex = 1080;
+
+    wrapper.innerHTML = `
+        <div class="toast align-items-center text-bg-${type} border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">${message}</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(wrapper);
+    setTimeout(() => {
+        wrapper.remove();
+    }, timeout);
+}

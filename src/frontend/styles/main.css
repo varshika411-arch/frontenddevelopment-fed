@@ -92,3 +92,40 @@ main {
 .fade-in {
     animation: fadeIn 0.5s ease-in-out;
 }
+
+/* Brand gradient navbar */
+.bg-gradient {
+    background: linear-gradient(90deg, #0d6efd 0%, #6610f2 100%);
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: .75rem;
+    box-shadow: 0 6px 18px rgba(13,110,253,0.08);
+}
+
+.hero-cta .btn-primary {
+    box-shadow: 0 6px 18px rgba(13,110,253,0.18);
+}
+
+/* Forms */
+.form-container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 8px 20px rgba(33,37,41,0.05);
+}
+
+/* Footer */
+footer a { text-decoration: none; }
+
+/* Dashboard tweaks */
+.profile-header img { width: 120px; height: 120px; object-fit: cover; }
+
+.achievement-card .card-body { min-height: 140px; }
+
+@media (max-width: 576px) {
+    .feature-card { padding: 1rem; }
+}
