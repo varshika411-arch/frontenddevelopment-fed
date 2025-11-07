@@ -1,0 +1,94 @@
+/* Main Styles */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Custom Styles */
+.achievement-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-header {
+    background-color: var(--light-color);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.progress-track {
+    position: relative;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--light-color);
+    margin-bottom: 1rem;
+}
+
+.notification-badge {
+    position: relative;
+}
+
+.notification-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--danger-color);
+    border-radius: 50%;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-header {
+        text-align: center;
+    }
+    
+    .achievement-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
