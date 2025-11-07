@@ -1,9 +1,18 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const dbPath = path.join(__dirname, '../data/database.sqlite');
+// Use in-memory database for production, file-based for development
+const dbPath = process.env.NODE_ENV === 'production' 
+    ? ':memory:'
+    : path.join(__dirname, '../data/database.sqlite');
 
-const db = new sqlite3.Database(dbPath);
+const db = new sqlite3.Database(dbPath, (err) => {
+    if (err) {
+        console.error('Database connection error:', err);
+    } else {
+        console.log('Database connected successfully');
+    }
+});
 
 function initializeDatabase() {
     db.serialize(() => {
